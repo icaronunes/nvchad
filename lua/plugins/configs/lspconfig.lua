@@ -63,5 +63,8 @@ require("lspconfig").lua_ls.setup {
     },
   },
 }
+require("lspconfig").angularls.setup {
+
+}
 
 return M

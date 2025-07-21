@@ -19,3 +19,6 @@ local capabilities = lspconfig.capabilities
 --     , "typescriptreact", "typescript.tsx", "lua", "python"
 --   },
 -- })
+--
+-- lspconfig.angularls.setup{}
+
