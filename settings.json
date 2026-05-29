@@ -1,0 +1,186 @@
+{ // config do vscode
+  "terminal.integrated.shell.linux": "/usr/bin/fish",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorTheme": "Abyss",
+  "python.defaultInterpreterPath": "c:\\Python313\\python.exe",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "files.autoSave": "afterDelay",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "cSpell.userWords": ["firestore", "imdb", "Memecraciaweb", "typer"],
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "explorer.confirmDelete": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+  },
+  "[python]": {
+    "editor.formatOnType": true,
+    "formatting.provider": "black",
+  },
+  "git.autofetch": true,
+  "extensions.ignoreRecommendations": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "workbench.editor.empty.hint": "hidden",
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.insert": "",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#005f87",
+    "statusBar.noFolderBackground": "#005f87",
+    "statusBar.debuggingBackground": "#005f87",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff"
+  },
+  "vim.statusBarColors.replace": "",
+  "vim.leader": " ",
+  "vim.vimrc.enable": true,
+  "cSpell.enableFiletypes": ["!python"],
+  "git.confirmSync": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "vsicons.dontShowNewVersionMessage": true,
+  "vim.neovimConfigPath": "C:\\Users\\icaro\\AppData\\Local\\nvim\\init.lua",
+  "vim.vimrc.path": "C:\\Users\\icaro\\.vimrc",
+  "vim.neovimPath": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
+  "notebook.lineNumbers": "on",
+  "chat.viewSessions.orientation": "stacked",
+  "http.systemCertificatesNode": true,
+  "diffEditor.codeLens": true,
+  "cSpell.caseSensitive": true,
+  "vim.commandLineModeKeyBindings": [],
+  "vim.visualModeKeyBindingsNonRecursive": [],
+  "vim.handleKeys": {
+    // ddesabilita o ctrl + f do vim para usar o do vscode
+    "<C-f>": false,
+    "<C-p>": false,
+    "<C-s>": false,
+    "<C-b>": false,
+    "<C-j>": false,
+    "<C-i>": false,
+  },
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"],
+      "silent": true,
+    },
+    {
+      "before": ["g", "y"],
+      "commands": ["editor.action.goToDefinition"],
+      "silent": true,
+    },
+    {
+      "before": ["leader", "leader"],
+      "commands": [":nohl"],
+    },
+    {
+      "before": ["leader", "s", "="],
+      "commands": ["editor.action.formatSelection"],
+      "silent": true,
+    },
+    {
+      "before": ["leader", "="],
+      "commands": ["editor.action.formatDocument"],
+      "silent": true,
+    },
+    {
+      "before": ["]", "."],
+      "commands": ["editor.action.lastEditLocation"],
+      "silent": true,
+    },
+    {
+      "before": ["leader", "r", "e"],
+      "commands": ["editor.action.rename"],
+      "silent": true,
+    },
+    {
+      "before": ["leader", "-", "-"],
+      "commands": ["editor.action.organizeImports"],
+      "silent": true,
+    },
+    {
+      "before": ["leader", "?"],
+      "commands": ["editor.action.triggerSuggest"],
+      "silent": true,
+    },
+    {
+      "before": ["]", "."],
+      "commands": ["workbench.action.navigateToLastEditLocation"],
+      "silent": true,
+    },
+    {
+      "before": ["]", "]"],
+      "commands": ["editor.action.marker.next"],
+      "silent": true,
+    },
+    {
+      "before": ["[", "["],
+      "commands": ["editor.action.marker.prev"],
+      "silent": true,
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.nextEditor"],
+      "silent": true,
+    },
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.previousEditor"],
+      "silent": true,
+    },
+    {
+      "before": ["leader", "e"],
+      "commands": ["workbench.view.explorer"],
+      "silent": true,
+    },
+    {
+      "before": ["leader", "g", "t"],
+      "commands": ["workbench.view.scm"],
+      "silent": true,
+    },
+    {
+      "before": ["leader", "f", "r"],
+      "commands": ["references-view.findReferences"],
+      "silent": true,
+    },
+    {
+      "before": ["leader","r"],
+      "commands": ["editor.action.goToReferences"],
+      "silent": true,
+    },
+    {
+      "before": ["leader", "t"],
+      "commands": ["workbench.action.terminal.toggleTerminal"],
+      "silent": true,
+    },
+    {
+      "before": ["leader", "s", "v"],
+      "commands": ["workbench.action.splitEditor"],
+      "silent": true,
+    },
+    {
+      "before": ["g", "b"],
+      "commands": ["workbench.action.navigateBack"],
+      "silent": true,
+    },
+    {
+      "before": ["g", "f"],
+      "commands": ["workbench.action.navigateForward"],
+      "silent": true,
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showHover"],
+    },
+  ],
+}
