@@ -1,12 +1,17 @@
-{ // config do vscode
-  "terminal.integrated.shell.linux": "/usr/bin/fish",
+{
+  // "terminal.integrated.shell.linux": "/usr/bin/zsh",
+  // "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\git-bash.exe",
+  "vim.leader": " ",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.profiles.windows": {
+    "Git Bash": {
+      "path": "C:\\Program Files\\Git\\git-bash.exe",
+    },
+  },
   "workbench.iconTheme": "vscode-icons",
-  "workbench.colorTheme": "Abyss",
-  "python.defaultInterpreterPath": "c:\\Python313\\python.exe",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
-  "files.autoSave": "afterDelay",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
@@ -15,7 +20,6 @@
   },
   "cSpell.userWords": ["firestore", "imdb", "Memecraciaweb", "typer"],
   "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "explorer.confirmDelete": false,
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -27,14 +31,17 @@
     "editor.formatOnType": true,
     "formatting.provider": "black",
   },
-  "git.autofetch": true,
+  "js/ts.suggest.autoImports": true,
   "extensions.ignoreRecommendations": true,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "workbench.editor.empty.hint": "hidden",
+  "editor.renderWhitespace": "boundary",
+  "vim.statusBarColors.commandlineinprogress": ["#007acc", "#ffffff"],
+  "vim.statusBarColors.searchinprogressmode": ["#00ff00", "#000000"],
   "vim.statusBarColorControl": true,
-  "vim.statusBarColors.insert": "",
+  "vim.statusBarColors.insert": "#ff0000",
   "workbench.colorCustomizations": {
     "statusBar.background": "#005f87",
     "statusBar.noFolderBackground": "#005f87",
@@ -42,23 +49,37 @@
     "statusBar.foreground": "#ffffff",
     "statusBar.debuggingForeground": "#ffffff"
   },
-  "vim.statusBarColors.replace": "",
-  "vim.leader": " ",
-  "vim.vimrc.enable": true,
-  "cSpell.enableFiletypes": ["!python"],
+  "vim.statusBarColors.replace": ["#ff0fff"],
   "git.confirmSync": false,
+  "git.ignoreRebaseWarning": true,
+  "git.fetchOnPull": true,
+  "github.copilot.selectedCompletionModel": "",
   "diffEditor.ignoreTrimWhitespace": false,
   "vsicons.dontShowNewVersionMessage": true,
-  "vim.neovimConfigPath": "C:\\Users\\icaro\\AppData\\Local\\nvim\\init.lua",
-  "vim.vimrc.path": "C:\\Users\\icaro\\.vimrc",
+  "vim.neovimConfigPath": "C:\\Users\\icaro.nunes\\AppData\\Local\\nvim\\init.lua",
+  "vim.vimrc.path": "C:\\Users\\icaro.nunes\\.vimrc",
   "vim.neovimPath": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
   "notebook.lineNumbers": "on",
-  "chat.viewSessions.orientation": "stacked",
-  "http.systemCertificatesNode": true,
+  "files.autoSave": "afterDelay",
   "diffEditor.codeLens": true,
-  "cSpell.caseSensitive": true,
-  "vim.commandLineModeKeyBindings": [],
-  "vim.visualModeKeyBindingsNonRecursive": [],
+  "editor.minimap.size": "fill",
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "geminicodeassist.inlineSuggestions.enableAuto": false,
+  "claudeCode.preferredLocation": "panel",
+  "chat.viewSessions.orientation": "stacked",
+  "editor.cursorSmoothCaretAnimation": "off",
+  "editor.cursorBlinking": "solid",
+  "js/ts.tsserver.maxMemory": 4192,
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.next": true,
+    "**/coverage": true,
+  },
   "vim.handleKeys": {
     // ddesabilita o ctrl + f do vim para usar o do vscode
     "<C-f>": false,
@@ -91,11 +112,6 @@
     {
       "before": ["leader", "="],
       "commands": ["editor.action.formatDocument"],
-      "silent": true,
-    },
-    {
-      "before": ["]", "."],
-      "commands": ["editor.action.lastEditLocation"],
       "silent": true,
     },
     {
@@ -154,7 +170,7 @@
       "silent": true,
     },
     {
-      "before": ["leader","r"],
+      "before": ["leader", "r"],
       "commands": ["editor.action.goToReferences"],
       "silent": true,
     },
