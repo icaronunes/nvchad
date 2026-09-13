@@ -16,7 +16,7 @@ local plugins = {
         dapui.close()
       end
     end
-  }, 
+  },
   {
     "mfussenegger/nvim-dap",
     config = function(_,opts)

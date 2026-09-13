@@ -86,32 +86,39 @@ local default_plugins = {
   },
 
   -- git stuff
-  {
-    "lewis6991/gitsigns.nvim",
-    ft = { "gitcommit", "diff" },
-    init = function()
-      -- load gitsigns only when a git file is opened
-      vim.api.nvim_create_autocmd({ "BufRead" }, {
-        group = vim.api.nvim_create_augroup("GitSignsLazyLoad", { clear = true }),
-        callback = function()
-          vim.fn.system("git -C " .. '"' .. vim.fn.expand "%:p:h" .. '"' .. " rev-parse")
-          if vim.v.shell_error == 0 then
-            vim.api.nvim_del_augroup_by_name "GitSignsLazyLoad"
+ {
+  "lewis6991/gitsigns.nvim",
+  ft = { "gitcommit", "diff" },
+  init = function()
+    vim.api.nvim_create_autocmd({ "BufRead" }, {
+      group = vim.api.nvim_create_augroup("GitSignsLazyLoad", { clear = true }),
+      callback = function()
+        vim.system({
+          "git",
+          "-C",
+          vim.fn.expand("%:p:h"),
+          "rev-parse",
+        }, {}, function(result)
+          if result.code == 0 then
             vim.schedule(function()
+              vim.api.nvim_del_augroup_by_name("GitSignsLazyLoad")
               require("lazy").load { plugins = { "gitsigns.nvim" } }
             end)
           end
-        end,
-      })
-    end,
-    opts = function()
-      return require("plugins.configs.others").gitsigns
-    end,
-    config = function(_, opts)
-      dofile(vim.g.base46_cache .. "git")
-      require("gitsigns").setup(opts)
-    end,
-  },
+        end)
+      end,
+    })
+  end,
+
+  opts = function()
+    return require("plugins.configs.others").gitsigns
+  end,
+
+  config = function(_, opts)
+    dofile(vim.g.base46_cache .. "git")
+    require("gitsigns").setup(opts)
+  end,
+},
 
   -- lsp stuff
   {
@@ -227,7 +234,8 @@ local default_plugins = {
   {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
-    dependencies = { "nvim-treesitter/nvim-treesitter", { "nvim-telescope/telescope-fzf-native.nvim", build = "make" } },
+    dependencies = { "nvim-treesitter/nvim-treesitter", { "nvim-telescope/telescope-fzf-native.nvim", build = "mingw32-make" } },
+    -- make usado mingw32-make.exe normalmente e somente "make"
     cmd = "Telescope",
     init = function()
       require("core.utils").load_mappings "telescope"

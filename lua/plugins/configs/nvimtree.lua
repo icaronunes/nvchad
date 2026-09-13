@@ -1,4 +1,5 @@
 local options = {
+
   filters = {
     dotfiles = false,
     exclude = { vim.fn.stdpath "config" .. "/lua/custom" },

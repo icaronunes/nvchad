@@ -41,7 +41,7 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
-require("lspconfig").lua_ls.setup {
+vim.lsp.config("lua_ls", {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
 
@@ -62,9 +62,17 @@ require("lspconfig").lua_ls.setup {
       },
     },
   },
-}
-require("lspconfig").angularls.setup {
+})
+vim.lsp.enable("lua_ls")
 
-}
+vim.lsp.config("angularls", {})
+vim.lsp.enable("angularls")
+
+vim.lsp.config("ts_ls",  {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+})
+
+vim.lsp.enable("ts_ls")
 
 return M

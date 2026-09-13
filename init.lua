@@ -20,7 +20,3 @@ dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
 
 require("plugins")
-
-require'lspconfig'.angularls.setup{}
-require'lspconfig'.lua_ls.setup{}
-require'lspconfig'.ts_ls.setup{}
